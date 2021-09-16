@@ -1,7 +1,15 @@
 <template>
   <div class="news-content">
-    {{ content.title }}
-    {{ content.url }}<br>
+    <h2>
+      {{ content.title }}
+    </h2>
+    <figure v-if="content.multimedia" class="picture">
+      <img :src="content.multimedia[0].url" :alt="content.multimedia[0].caption">
+      <figcaption>{{ content.multimedia[0].caption }}</figcaption>
+    </figure>
+    <h4>
+      {{ content.abstract }}
+    </h4>
   </div>
 </template>
 <script>
@@ -18,5 +26,23 @@ export default {
 <style lang="scss" scoped>
 .news-content {
   font-size: .6rem;
+}
+
+.picture {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+  }
+  figcaption {
+    width: 100%
+  }
 }
 </style>

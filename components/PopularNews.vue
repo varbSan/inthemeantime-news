@@ -1,6 +1,5 @@
 <template>
   <section class="popular-news">
-    <h2>Popular News</h2>
     <NewsContent v-if="popularContent !== null" :content="popularContent" />
   </section>
 </template>

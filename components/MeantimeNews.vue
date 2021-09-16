@@ -1,6 +1,5 @@
 <template>
   <section class="meantime-news">
-    <h2>Meantime News</h2>
     <NewsContent v-if="meantimeContent !== null" :content="meantimeContent" />
   </section>
 </template>
@@ -22,7 +21,7 @@ export default {
         const nytApiUrl = `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${nytKey}`
         const nytMeantimeContent = await axios.get(nytApiUrl)
         // console.log(content.data.results[0])
-        console.log(nytMeantimeContent.data)
+        console.log(nytMeantimeContent.data.results[0].multimedia[0])
 
         this.meantimeContent = nytMeantimeContent.data.results[0]
       } catch (err) {

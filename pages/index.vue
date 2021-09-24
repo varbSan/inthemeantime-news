@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Navbar />
-    <PopularNews v-show="!isNewsWorthy" />
-    <MeantimeNews v-show="isNewsWorthy" />
-    <Button msg="In the meantime..." @click.native="isNewsWorthy = !isNewsWorthy" />
+    <OrganismNavbar />
+    <OrganismPopularNews v-show="!isNewsWorthy" />
+    <OrganismMeantimeNews v-show="isNewsWorthy" />
+    <AtomButton msg="In the meantime..." @click.native="isNewsWorthy = !isNewsWorthy" />
   </div>
 </template>
 
@@ -14,6 +14,8 @@ export default {
       isNewsWorthy: false
     }
   }
-
 }
 </script>
+
+<style lang="scss">
+</style>

@@ -24,10 +24,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.news-content {
-  font-size: .6rem;
-}
-
 .picture {
   display: grid;
   grid-template-columns: 1fr;
@@ -42,7 +38,8 @@ export default {
     width: 100%;
   }
   figcaption {
-    width: 100%
+    width: 100%;
+    padding: .5rem 2rem;
   }
 }
 </style>

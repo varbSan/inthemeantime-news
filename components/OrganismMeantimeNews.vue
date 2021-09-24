@@ -1,6 +1,6 @@
 <template>
   <section class="meantime-news">
-    <NewsContent v-if="meantimeContent !== null" :content="meantimeContent" />
+    <MoleculeNewsContent v-if="meantimeContent !== null" :content="meantimeContent" />
   </section>
 </template>
 <script>

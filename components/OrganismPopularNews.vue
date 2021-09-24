@@ -1,6 +1,6 @@
 <template>
   <section class="popular-news">
-    <NewsContent v-if="popularContent !== null" :content="popularContent" />
+    <MoleculeNewsContent v-if="popularContent !== null" :content="popularContent" />
   </section>
 </template>
 <script>

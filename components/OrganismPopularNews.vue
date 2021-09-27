@@ -14,22 +14,22 @@ export default {
   mounted () {
     const getPopularContent = async () => {
       try {
-        const nytKeyPath = '/api/nyt'
-        const nytKeyResult = await axios.get(nytKeyPath)
-        const nytKey = nytKeyResult.data
+        const newsKeyPath = '/api/news'
+        const newsKeyResult = await axios.get(newsKeyPath)
+        const newsKey = newsKeyResult.data
 
-        const nytApiUrl = `https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${nytKey}`
-        const nytPopularContent = await axios.get(nytApiUrl)
-        console.log(nytPopularContent.data.results[0])
+        const newsApiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=entertainment&pageSize=1&apiKey=${newsKey}`
+        const newsPopularContent = await axios.get(newsApiUrl)
+        // console.log(content.data.results[0])
+        console.log(newsPopularContent)
 
-        this.popularContent = nytPopularContent.data.results[0]
+        this.popularContent = newsPopularContent.data.articles[0]
       } catch (err) {
         console.log(err)
       }
     }
     getPopularContent()
   }
-
 }
 </script>
 

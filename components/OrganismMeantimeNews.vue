@@ -14,16 +14,16 @@ export default {
   mounted () {
     const getMeantimeContent = async () => {
       try {
-        const nytKeyPath = '/api/nyt'
-        const nytKeyResult = await axios.get(nytKeyPath)
-        const nytKey = nytKeyResult.data
+        const newsKeyPath = '/api/news'
+        const newsKeyResult = await axios.get(newsKeyPath)
+        const newsKey = newsKeyResult.data
 
-        const nytApiUrl = `https://api.nytimes.com/svc/topstories/v2/science.json?api-key=${nytKey}`
-        const nytMeantimeContent = await axios.get(nytApiUrl)
+        const newsApiUrl = `https://newsapi.org/v2/top-headlines?country=us&category=science&pageSize=1&apiKey=${newsKey}`
+        const newsMeantimeContent = await axios.get(newsApiUrl)
         // console.log(content.data.results[0])
-        console.log(nytMeantimeContent.data.results[0].multimedia[0])
+        console.log(newsMeantimeContent)
 
-        this.meantimeContent = nytMeantimeContent.data.results[0]
+        this.meantimeContent = newsMeantimeContent.data.articles[0]
       } catch (err) {
         console.log(err)
       }

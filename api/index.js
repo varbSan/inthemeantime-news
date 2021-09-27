@@ -4,10 +4,10 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const nytKey = process.env.NYT_KEY
+const newsKey = process.env.NEWS_KEY
 
-app.get('/nyt', function (req, res) {
-  res.send(nytKey)
+app.get('/news', function (req, res) {
+  res.send(newsKey)
 })
 
 export default {

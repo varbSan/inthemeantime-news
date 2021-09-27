@@ -3,12 +3,15 @@
     <h2>
       {{ content.title }}
     </h2>
-    <figure v-if="content.multimedia" class="picture">
-      <img :src="content.multimedia[0].url" :alt="content.multimedia[0].caption">
-      <figcaption>{{ content.multimedia[0].caption }}</figcaption>
+    <figure v-if="content.urlToImage" class="picture">
+      <img :src="content.urlToImage" :alt="content.urlToImage[0].caption">
+      <figcaption>{{ content.description }}</figcaption>
     </figure>
+    <h6>
+      {{ content.content }}
+    </h6>
     <h4>
-      {{ content.abstract }}
+      {{ content.author }}
     </h4>
   </div>
 </template>
